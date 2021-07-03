@@ -6,7 +6,7 @@ ADD ./package* ./
 RUN npm ci
 
 ADD / ./
-RUN ls && npm run build
+RUN npm run build
 
 # Actual image
 FROM cupcakearmy/static
