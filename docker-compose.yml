@@ -1,0 +1,19 @@
+version: "3.8"
+
+networks:
+  proxy:
+    external: true
+
+services:
+  registry:
+    image: registry.love-foundation.org/links:main
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.lf-links.rule=Host(`links.love-foundation.org`)
+      - traefik.http.routers.lf-links.entrypoints=secure
+      - traefik.http.routers.lf-links.tls.certresolver=le
+
+      - com.centurylinklabs.watchtower.scope=internal
