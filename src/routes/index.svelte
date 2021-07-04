@@ -30,6 +30,11 @@
       </div>
     </a>
   {/each}
+
+  <br />
+  <p>
+    <code>made with ❤️</code>
+  </p>
 </main>
 
 <style>
